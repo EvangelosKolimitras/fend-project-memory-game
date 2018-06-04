@@ -2,7 +2,29 @@
  * Create a list that holds all of your cards
  */
 
+let card = document.querySelectorAll(".card");
+let cards = [...card];
+const board = document.querySelector("#deck");
 
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", cardListener);
+}
+
+function cardListener() {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+}
+
+function newGame() {
+    let shuffledCards = shuffle(cards);
+    for (let i = 0; i < shuffledCards.length; i++) {
+        [].forEach.call(shuffledCards, function (x) {
+            board.appendChild(x);
+        });
+    }
+}
+window.onload = newGame();
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -12,7 +34,8 @@
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);

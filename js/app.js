@@ -1,7 +1,6 @@
 /*
  * Create a list that holds all of your cards
  */
-
 let card = document.querySelectorAll(".card");
 let cards = [...card];
 const board = document.querySelector("#deck");
@@ -25,6 +24,7 @@ function newGame() {
     }
 }
 window.onload = newGame();
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below

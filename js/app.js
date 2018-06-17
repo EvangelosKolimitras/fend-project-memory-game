@@ -5,10 +5,6 @@ let card = document.querySelectorAll(".card");
 let cards = [...card];
 const board = document.querySelector("#deck");
 
-let card = document.querySelectorAll(".card");
-let cards = [...card];
-const board = document.querySelector("#deck");
-
 for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", cardListener);
 }

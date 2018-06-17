@@ -1,9 +1,6 @@
 /*
  * Create a list that holds all of your cards
  */
-
- 
-
 let card = document.querySelectorAll(".card");
 let cards = [...card];
 const board = document.querySelector("#deck");

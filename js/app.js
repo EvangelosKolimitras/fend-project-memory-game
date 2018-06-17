@@ -4,6 +4,7 @@ let cards = [...card];
 let flipped_cards = [];
 
 const board = document.querySelector("#deck");
+let matchedCard = document.getElementsByClassName("match");
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -22,8 +23,8 @@ function shuffle(array) {
 
 // Add event listener onclick
 for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", cardListener );
-    cards[i].addEventListener("click", flip_card );  
+    cards[i].addEventListener("click", cardListener);
+    cards[i].addEventListener("click", flip_card);
 }
 
 // Different states on click
@@ -46,20 +47,55 @@ function newGame() {
 
 function flip_card() {
     flipped_cards.push(this);
-    if(flipped_cards.length === 2) {
-        if(flipped_cards[0] === flipped_cards[1]) {
-            cards_matced();
-        }else {
-            cards_unmatch();
+
+    if (flipped_cards.length === 2) {
+        if (flipped_cards[0].type === flipped_cards[1].type) {
+            cards_matched();
+        } else {
+            cards_unmatched();
         }
     }
 }
 
+function cards_matched() {
+    console.log('matched');
+    flipped_cards[0].classList.add("match", "disabled");
+    flipped_cards[1].classList.add("match", "disabled");
+    flipped_cards[0].classList.remove("show", "open");
+    flipped_cards[1].classList.remove("show", "open");
+    flipped_cards = [];
+}
 
+function cards_unmatched() {
+    console.log('unmatched');
+    flipped_cards[0].classList.add("unmatched");
+    flipped_cards[1].classList.add("unmatched");
 
+    disable();
+    setTimeout(function () {
+        flipped_cards[0].classList.remove("show", "open", "unmatched");
+        flipped_cards[1].classList.remove("show", "open", "unmatched");
+        // enable();
+        flipped_cards = [];
+    }, 500);
+}
 
+function disable(){
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.add('disabled');
+    });
+}
+
+function enable(){
+    Array.prototype.filter.call(cards, function(card){
+        card.classList.remove('disabled');
+        for(let i = 0; i < matchedCard.length; i++){
+            matchedCard[i].classList.add("disabled");
+        }
+    });
+}
 
 
 
 // Start the game
-window.onload = newGame();
+document.body.onload = newGame();

@@ -81,6 +81,33 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.unmatched {
+	animation-name: unmatched;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .56s;
+	background: #e2043b;
+}
+
+@keyframes unmatched {
+	0% {
+		transform: scale3d(1, 1, 1) rotate(0deg);
+	}
+	
+	50% {
+		transform: scale3d(1.2, 1.2, 1.2) ;
+    }
+    70% {
+		transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg);
+	}
+	80% {
+		transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
+	}
+	100% {
+		transform: scale3d(1, 1, 1) rotate(0deg);
+	}
+}
+
 /*
  * Styles for the Score Panel
  */

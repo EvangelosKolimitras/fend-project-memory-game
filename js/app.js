@@ -1,36 +1,9 @@
-/*
- * Create a list that holds all of your cards
- */
+/* * Create a list that holds all of your cards */
 let card = document.querySelectorAll(".card");
 let cards = [...card];
+let flipped_cards = [];
+
 const board = document.querySelector("#deck");
-
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", cardListener);
-}
-
-function cardListener() {
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
-}
-
-function newGame() {
-    let shuffledCards = shuffle(cards);
-    for (let i = 0; i < shuffledCards.length; i++) {
-        [].forEach.call(shuffledCards, function (x) {
-            board.appendChild(x);
-        });
-    }
-}
-window.onload = newGame();
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -44,18 +17,49 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
 
+// Add event listener onclick
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", cardListener );
+    cards[i].addEventListener("click", flip_card );  
+}
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+// Different states on click
+function cardListener() {
+    this.classList.toggle("open");
+    this.classList.toggle("show");
+    this.classList.toggle("disabled");
+}
+
+// Generates a new board and shuffles the deck
+function newGame() {
+    let shuffledCards = shuffle(cards);
+    for (let i = 0; i < shuffledCards.length; i++) {
+        [].forEach.call(shuffledCards, function (x) {
+            board.appendChild(x);
+        });
+        cards[i].classList.remove("show", "open", "match", "disabled");
+    }
+}
+
+function flip_card() {
+    flipped_cards.push(this);
+    if(flipped_cards.length === 2) {
+        if(flipped_cards[0] === flipped_cards[1]) {
+            cards_matced();
+        }else {
+            cards_unmatch();
+        }
+    }
+}
+
+
+
+
+
+
+
+// Start the game
+window.onload = newGame();

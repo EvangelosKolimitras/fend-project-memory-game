@@ -25,6 +25,7 @@ function shuffle(array) {
 for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", cardListener);
     cards[i].addEventListener("click", flip_card);
+    cards[i].addEventListener("click", gameEnd);
 }
 
 // Different states on click
@@ -95,7 +96,13 @@ function enable(){
     });
 }
 
+function gameEnd() {
+    if(matchedCard.length == 16) {
+        console.log("Congratulations!!");
 
+        zeroTimer();
+        congratsMsg();
+    }
+}
 
-// Start the game
 document.body.onload = newGame();

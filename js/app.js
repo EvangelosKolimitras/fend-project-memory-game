@@ -5,6 +5,7 @@ let flipped_cards = [];
 
 const board = document.querySelector("#deck");
 let matchedCard = document.getElementsByClassName("match");
+let restart_btn = document.querySelector(".restart");
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -49,6 +50,7 @@ function newGame() {
 function flip_card() {
     flipped_cards.push(this);
 
+    startTimer();
     if (flipped_cards.length === 2) {
         if (flipped_cards[0].type === flipped_cards[1].type) {
             cards_matched();
@@ -99,10 +101,39 @@ function enable(){
 function gameEnd() {
     if(matchedCard.length == 16) {
         console.log("Congratulations!!");
-
-        zeroTimer();
         congratsMsg();
     }
+}
+
+/*
+
+    The starTimer() function is being invoked whene a user clicks the first card.
+
+*/
+let s = 0;
+let m = 0; //s = seconds, m = minutes
+let h = 0;
+let time;
+
+function startTimer() {
+    let timer = document.createElement("span");
+    time = setInterval(function() {
+
+        timer.innerHTML = h + " : " + m + " : " + s;
+        restart_btn.insertBefore(timer, restart_btn.childNodes[0]);
+        s++;
+        if(s == 60) {
+            
+            m++;
+            s = 0;
+        }
+        if(m == 60) {
+            h++;
+            m = 0;
+        }
+        
+    }, 1000);
+    
 }
 
 document.body.onload = newGame();

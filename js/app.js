@@ -3,8 +3,11 @@
 /*
     Elements retrieved from the DOM and variable assignments
 */
-let card = document.querySelectorAll(".card");
+
 const board = document.querySelector("#deck");
+const move = document.querySelector(".moves");
+
+let card = document.querySelectorAll(".card");
 let matchedCard = document.getElementsByClassName("match");
 let restart_btn = document.querySelector(".restart");
 
@@ -79,7 +82,7 @@ function cardListener() {
 
 function flip_card() {
     flipped_cards.push(this);
-
+    moveUpdater();
     if (flipped_cards.length === 2) {
         if (flipped_cards[0].type === flipped_cards[1].type) {
             cards_matched();
@@ -189,6 +192,17 @@ function startTimer() {
 
 /*
     FUNCTION-11:
+    A congratulations message along with the resulting score appears to the user.
+*/
+let moves = 0;
+
+function moveUpdater() {
+    moves++;
+    move.innerHTML = moves ;
+}
+
+/*
+    FUNCTION-12:
     A congratulations message along with the resulting score appears to the user.
 */
 

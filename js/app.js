@@ -62,6 +62,7 @@ function cardListener() {
 */
 
     function newGame() {
+    startTimer();
     let shuffledCards = shuffle(cards);
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function (x) {
@@ -79,7 +80,6 @@ function cardListener() {
 function flip_card() {
     flipped_cards.push(this);
 
-    startTimer();
     if (flipped_cards.length === 2) {
         if (flipped_cards[0].type === flipped_cards[1].type) {
             cards_matched();

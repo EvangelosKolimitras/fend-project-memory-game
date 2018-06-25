@@ -5,11 +5,20 @@
 */
 
 const board = document.querySelector("#deck");
-const move = document.querySelector(".moves");
+const move  = document.querySelector(".moves");
+
+const lvl   = document.querySelector("level");
+let lvlElem = document.querySelectorAll("#level li");
 
 let card = document.querySelectorAll(".card");
+
 let matchedCard = document.getElementsByClassName("match");
-let restart_btn = document.querySelector(".restart");
+
+let restart_btn = document.getElementById("restart");
+restart_btn.addEventListener("click", restart);
+
+let timer = document.getElementById("timer");
+
 
 /*
     Manipulation of retrieved elements 
@@ -24,7 +33,7 @@ let flipped_cards = [];
   Shuffle function from http://stackoverflow.com/a/2450976
 */
 
- function shuffle(array) {
+function shuffle(array) {
     let currentIndex = array.length,
         temporaryValue, randomIndex;
 
@@ -64,8 +73,7 @@ function cardListener() {
     Generates a new board and shuffles the deck
 */
 
-    function newGame() {
-    startTimer();
+function newGame() {
     let shuffledCards = shuffle(cards);
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function (x) {
@@ -73,6 +81,18 @@ function cardListener() {
         });
         cards[i].classList.remove("show", "open", "match", "disabled");
     }
+
+    moves = 0;
+    move.innerHTML = moves;
+    
+    //reset timer
+    s = 0;
+    m = 0; 
+    h = 0;
+    
+    let timer = document.getElementById("timer");
+    timer.innerHTML = "0 : 0";
+    clearInterval(timeInt);   
 }
 
 /*
@@ -164,20 +184,18 @@ function gameEnd() {
 
 /*
     FUNCTION-10:
-    Automatically generates a timer of users first click
+    Automatically generates a timer of user's first click
 */
 
 let s = 0; // Seconds
 let m = 0; // Minutes
 let h = 0; // Hours
 
-let time; // Holds the interval function
-let timer = document.createElement("span"); //Creates the display timer element
+let timeInt; // Holds the interval function
 
 function startTimer() {
-    time = setInterval(function () {
-        timer.innerHTML = h + " : " + m + " : " + s;
-        restart_btn.insertBefore(timer, restart_btn.childNodes[0]);
+    timeInt = setInterval(function () {
+        timer.innerHTML = m + " : " + s;
         s++;
         if (s == 60) {
             m++;
@@ -192,22 +210,38 @@ function startTimer() {
 
 /*
     FUNCTION-11:
-    A congratulations message along with the resulting score appears to the user.
+    Updates the timer element for every click the user makes
 */
 let moves = 0;
 
 function moveUpdater() {
     moves++;
-    move.innerHTML = moves ;
+    move.innerHTML = moves;
+
+    if (moves == 1) {
+        s = 0;
+        m = 0;
+        h = 0;
+        startTimer();
+    }
 }
 
 /*
     FUNCTION-12:
+    Game restarts when the users click in the restasrt btn
+*/
+
+function restart() {
+    newGame();
+}
+
+/*
+    FUNCTION-13:
     A congratulations message along with the resulting score appears to the user.
 */
 
 function congratsMsg() {
-    console.log("Congratulations");    
+    console.log("Congratulations");
 }
 
 document.body.onload = newGame();

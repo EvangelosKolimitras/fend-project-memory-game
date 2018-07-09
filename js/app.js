@@ -216,13 +216,17 @@ let moves = 0;
 
 function moveUpdater() {
     moves++;
-    move.innerHTML = moves;
+    let moveString = " Move";
+    move.innerHTML = moves + moveString;
 
     if (moves == 1) {
         s = 0;
         m = 0;
         h = 0;
         startTimer();
+    }
+    if (moves > 1) {
+        move.innerHTML = moves + moveString + "s";
     }
 }
 
@@ -233,7 +237,6 @@ function moveUpdater() {
 
 function restart() {
     newGame();
-    runModal();
 }
 
 /*
@@ -242,14 +245,14 @@ function restart() {
 */
 
 function congratsMsg() {
+    setTimeout(() => {
+        let modal = document.getElementById("modal");
+        let overlayModal = document.getElementById("overlay-modal");
+        overlayModal.classList.add("overlay");
+        modal.classList.add("modal-show");
+    }, 250);
+    clearInterval(timeInt);
     console.log("Congratulations");
 }
 
 document.body.onload = newGame();
-
-function runModal() {
-    setTimeout(() => {
-        let modal = document.getElementById("modal");
-        modal.classList.add("modal-show");
-    }, 250);
-}

@@ -5,9 +5,9 @@
 */
 
 const board = document.querySelector("#deck");
-const move  = document.querySelector(".moves");
+const move = document.querySelector(".moves");
 
-const lvl   = document.querySelector("level");
+const lvl = document.querySelector("level");
 let lvlElem = document.querySelectorAll("#level li");
 
 let card = document.querySelectorAll(".card");
@@ -84,15 +84,15 @@ function newGame() {
 
     moves = 0;
     move.innerHTML = moves;
-    
+
     //reset timer
     s = 0;
-    m = 0; 
+    m = 0;
     h = 0;
-    
+
     let timer = document.getElementById("timer");
     timer.innerHTML = "0 : 0";
-    clearInterval(timeInt);   
+    clearInterval(timeInt);
 }
 
 /*
@@ -233,6 +233,7 @@ function moveUpdater() {
 
 function restart() {
     newGame();
+    runModal();
 }
 
 /*
@@ -245,3 +246,10 @@ function congratsMsg() {
 }
 
 document.body.onload = newGame();
+
+function runModal() {
+    setTimeout(() => {
+        let modal = document.getElementById("modal");
+        modal.classList.add("modal-show");
+    }, 250);
+}

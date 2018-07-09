@@ -17,7 +17,11 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1170525/1160/772/m1/fpnw/wm0/cm-prev_1-.jpg?1460400764&s=6c89cd35f4c112b09319add3636fdad9');
+    /* Background pattern from Subtle Patterns */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     font-family: 'Coda', cursive;
 }
 
@@ -40,7 +44,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(134deg, rgba(27,94,32 ,1) 20%, rgba(238,255,65 ,1) 80%);
+    background: url("http://www.pptbackgrounds.org/uploads/paper-textures-crumpled-backgrounds-wallpapers.jpg");
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -54,7 +58,10 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: rgba(0,150,136,1);
+    background: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Hd-Wallpaper.jpg");
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -67,7 +74,7 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: rgba(3,169,244,1);
+    background: rgba(3, 169, 244, 1);
     cursor: default;
 }
 
@@ -82,37 +89,37 @@ h1 {
 }
 
 .deck .card.unmatched {
-	animation-name: unmatched;
-	-webkit-backface-visibility: visible !important;
-	backface-visibility: visible !important;
-	animation-duration: .56s;
-	background: #e2043b;
+    animation-name: unmatched;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    animation-duration: .56s;
+    background: #e2043b;
 }
 
 @keyframes unmatched {
-	0% {
-		transform: scale3d(1, 1, 1) rotate(0deg);
-	}
-	
-	50% {
-		transform: scale3d(1.2, 1.2, 1.2) ;
+    0% {
+        transform: scale3d(1, 1, 1) rotate(0deg);
+    }
+    50% {
+        transform: scale3d(1.2, 1.2, 1.2);
     }
     70% {
-		transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg);
-	}
-	80% {
-		transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
-	}
-	100% {
-		transform: scale3d(1, 1, 1) rotate(0deg);
-	}
+        transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg);
+    }
+    80% {
+        transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
+    }
+    100% {
+        transform: scale3d(1, 1, 1) rotate(0deg);
+    }
 }
 
 .disabled {
-    pointer-events:  none;
+    pointer-events: none;
     border: 2px solid darkred;
-    background-color: rgba(255,87,34,1);
+    background-color: rgba(255, 87, 34, 1);
 }
+
 /*
  * Styles for the Score Panel
  */
@@ -135,7 +142,57 @@ h1 {
     display: inline-block;
 }
 
-.score-panel .restart, #timer {
+.score-panel .restart,
+#timer {
     float: right;
     cursor: pointer;
+}
+
+.modal {
+    width: 60vw;
+    height: 30vw;
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/50/64/50577e1f9b187b0.jpg");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    box-shadow: 1rem 1rem 1rem #222;
+    border-radius: 1rem;    
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-show {
+    opacity: 1;
+    visibility: visible;
+    animation: moveUp .5s ease-in-out 1;
+}
+
+.modal__header--main {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.modal__header--sub {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+@keyframes moveUp {
+    0% {
+        transform:  translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform:  translate(-50%, -50%) scale(1.2)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

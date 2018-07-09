@@ -7,6 +7,11 @@
 const board = document.querySelector("#deck");
 const move = document.querySelector(".moves");
 
+const modal = document.getElementById("modal");
+const overlayModal = document.getElementById("overlay-modal");
+const modalMoves = document.querySelector(".modal__statistics--moves");
+const modalTime = document.querySelector(".modal__statistics--time");
+
 const lvl = document.querySelector("level");
 let lvlElem = document.querySelectorAll("#level li");
 
@@ -18,7 +23,6 @@ let restart_btn = document.getElementById("restart");
 restart_btn.addEventListener("click", restart);
 
 let timer = document.getElementById("timer");
-
 
 /*
     Manipulation of retrieved elements 
@@ -246,10 +250,10 @@ function restart() {
 
 function congratsMsg() {
     setTimeout(() => {
-        let modal = document.getElementById("modal");
-        let overlayModal = document.getElementById("overlay-modal");
         overlayModal.classList.add("overlay");
         modal.classList.add("modal-show");
+        modalMoves.innerHTML = "Total Moves: " + moves;
+        modalTime.innerHTML  = "Total Time: " + timer.innerHTML;
     }, 250);
     clearInterval(timeInt);
     console.log("Congratulations");

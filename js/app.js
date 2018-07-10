@@ -4,20 +4,24 @@
     Elements retrieved from the DOM and variable assignments
 */
 
-const board = document.querySelector("#deck");
-const move = document.querySelector(".moves");
+const board = document.querySelector("#card__deck");
+const move = document.querySelector(".score__panel--moves");
 
-const modal = document.getElementById("modal");
-const overlayModal = document.getElementById("overlay-modal");
+const modal_congrats = document.getElementById("modal_congrats");
+const modal_user = document.getElementById("modal__user");
+
+const username = document.getElementById("modal__user--input");
+const overlayModal = document.getElementById("overlay");
 const modalMoves = document.querySelector(".modal__statistics--moves");
 const modalTime = document.querySelector(".modal__statistics--time");
+const modalRestartBtn = document.querySelector("#modal__restart--btn");
 
 const lvl = document.querySelector("level");
 let lvlElem = document.querySelectorAll("#level li");
 
-let card = document.querySelectorAll(".card");
+let card = document.querySelectorAll(".card__deck--card");
 
-let matchedCard = document.getElementsByClassName("match");
+let matchedCard = document.getElementsByClassName("u-match");
 
 let restart_btn = document.getElementById("restart");
 restart_btn.addEventListener("click", restart);
@@ -67,23 +71,24 @@ for (let i = 0; i < cards.length; i++) {
 */
 
 function cardListener() {
-    this.classList.toggle("open");
-    this.classList.toggle("show");
-    this.classList.toggle("disabled");
+    this.classList.toggle("u-open");
+    this.classList.toggle("u-show");
+    this.classList.toggle("u-disabled");
 }
 
 /*
     FUNCTION-03:
-    Generates a new board and shuffles the deck
+    Generates a new board and shuffles the card__deck
 */
 
 function newGame() {
+
     let shuffledCards = shuffle(cards);
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function (x) {
             board.appendChild(x);
         });
-        cards[i].classList.remove("show", "open", "match", "disabled");
+        cards[i].classList.remove("u-show", "u-open", "u-match", "u-disabled");
     }
 
     moves = 0;
@@ -123,10 +128,10 @@ function flip_card() {
 
 function cards_matched() {
     console.log('matched');
-    flipped_cards[0].classList.add("match", "disabled");
-    flipped_cards[1].classList.add("match", "disabled");
-    flipped_cards[0].classList.remove("show", "open");
-    flipped_cards[1].classList.remove("show", "open");
+    flipped_cards[0].classList.add("u-match", "u-disabled");
+    flipped_cards[1].classList.add("u-match", "u-disabled");
+    flipped_cards[0].classList.remove("u-show", "u-open");
+    flipped_cards[1].classList.remove("u-show", "u-open");
     flipped_cards = [];
 }
 
@@ -142,8 +147,8 @@ function cards_unmatched() {
 
     disable();
     setTimeout(function () {
-        flipped_cards[0].classList.remove("show", "open", "unmatched");
-        flipped_cards[1].classList.remove("show", "open", "unmatched");
+        flipped_cards[0].classList.remove("u-show", "u-open", "unmatched");
+        flipped_cards[1].classList.remove("u-show", "u-open", "unmatched");
         enable();
         flipped_cards = [];
     }, 500);
@@ -151,12 +156,12 @@ function cards_unmatched() {
 
 /*
     FUNCTION-07:
-    adds the disabled class to prevent double clicking on the same elemet
+    adds the u-disabled class to prevent double clicking on the same elemet
 */
 
 function disable() {
     Array.prototype.filter.call(cards, function (card) {
-        card.classList.add('disabled');
+        card.classList.add('u-disabled');
     });
 }
 
@@ -167,9 +172,9 @@ function disable() {
 
 function enable() {
     Array.prototype.filter.call(cards, function (card) {
-        card.classList.remove('disabled');
+        card.classList.remove('u-disabled');
         for (let i = 0; i < matchedCard.length; i++) {
-            matchedCard[i].classList.add("disabled");
+            matchedCard[i].classList.add("u-disabled");
         }
     });
 }
@@ -250,8 +255,8 @@ function restart() {
 
 function congratsMsg() {
     setTimeout(() => {
-        overlayModal.classList.add("overlay");
-        modal.classList.add("modal-show");
+        overlayModal.classList.add("u-overlay");
+        modal_congrats.classList.add("modal-show");
         modalMoves.innerHTML = "Total Moves: " + moves;
         modalTime.innerHTML  = "Total Time: " + timer.innerHTML;
     }, 250);
@@ -260,3 +265,12 @@ function congratsMsg() {
 }
 
 document.body.onload = newGame();
+
+function getUserName() {
+    setTimeout(() => {
+        overlayModal.classList.add("u-overlay");
+        modal_user.classList.add("modal-show");
+    }, 250);
+}
+
+getUserName();

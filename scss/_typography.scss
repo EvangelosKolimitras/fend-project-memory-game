@@ -1,0 +1,29 @@
+body {
+    font-family: 'Coda', cursive;
+}
+
+.card__deck {
+    &--card {
+        font-size: 0;
+    }
+}
+
+.modal {
+    &__header {
+        &--main {
+            font-size: 2rem;
+        }
+
+        &--sub {
+            font-size: 1rem;
+        }
+    }
+    
+    &__restart--btn {
+        font-size: 2.5rem;
+    }
+}
+
+.score__panel {
+    font-size: 2rem;
+}

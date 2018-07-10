@@ -1,0 +1,43 @@
+/* * * * Utilities are helping classes that are being added only with javascript * * * */
+.u-open {
+    transform: rotateY(0);
+    background: rgba(3, 169, 244, .5);
+    cursor: default;
+}
+
+.u-show {
+    font-size: 33px;
+}
+
+.u-match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.u-unmatched {
+    animation-name: unmatched;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    animation-duration: .56s;
+    background: #e2043b;
+}
+
+.u-disabled {
+    pointer-events: none;
+    border: 2px solid darkred;
+    background-color: rgba(255, 87, 34, 1);
+}
+
+.u-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(38, 50, 56, 1);
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

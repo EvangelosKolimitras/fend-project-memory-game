@@ -1,0 +1,32 @@
+/* * * * Keyframes * * * */
+
+
+@keyframes unmatched {
+    0% {
+        transform: scale3d(1, 1, 1) rotate(0deg);
+    }
+    50% {
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+    70% {
+        transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg);
+    }
+    80% {
+        transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
+    }
+    100% {
+        transform: scale3d(1, 1, 1) rotate(0deg);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform:  translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform:  translate(-50%, -50%) scale(1.2)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

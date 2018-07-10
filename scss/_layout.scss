@@ -1,0 +1,14 @@
+/* * * Layout styles * * * * */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    width: 25vw;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}

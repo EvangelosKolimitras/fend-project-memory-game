@@ -1,0 +1,30 @@
+/* * * * Deck style * * * */ 
+
+.card__deck {
+    width: 40vw;
+    min-height: 90vh;
+    background: url("../img/card-deck.jpg");
+    padding: 1rem;
+    border-radius: 1rem;
+    /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    &--card {
+        height: 125px;
+        width: 125px;
+        background: url("../img/cards.jpg");
+        background-position: center;
+        background-size: contain;
+        background-attachment: fixed;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+}

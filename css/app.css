@@ -1,221 +1,214 @@
+/* * * * Universal style * * * */
 html {
-    box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff url("../img/background.jpg");
+  /* Background pattern from Subtle Patterns */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+/* * * Layout styles * * * * */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.header {
+  width: 25vw;
+  position: absolute;
+  top: 0;
+  left: 1rem; }
 
 body {
-    background: #ffffff url('https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1170525/1160/772/m1/fpnw/wm0/cm-prev_1-.jpg?1460400764&s=6c89cd35f4c112b09319add3636fdad9');
-    /* Background pattern from Subtle Patterns */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    font-family: 'Coda', cursive;
-}
+  font-family: 'Coda', cursive; }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+.card__deck--card {
+  font-size: 0; }
 
-header {
-    width: 25vw;
-    position: absolute;
-    top: 0;
-    left: 1rem;
-}
-header img {
-    width: 100%;
-}
-/*
- * Styles for the deck of cards
- */
+.modal__header--main {
+  font-size: 2rem; }
+.modal__header--sub {
+  font-size: 1rem; }
+.modal__restart--btn {
+  font-size: 2.5rem; }
 
-.deck {
-    width: 40vw;
-    min-height: 90vh;
-    background: url("http://www.pptbackgrounds.org/uploads/paper-textures-crumpled-backgrounds-wallpapers.jpg");
-    padding: 1rem;
-    border-radius: 1rem;
-    /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem;
-}
+.score__panel {
+  font-size: 2rem; }
 
-.deck .card {
+.header img {
+  width: 100%; }
+
+/* * * * Deck style * * * */
+.card__deck {
+  width: 40vw;
+  min-height: 90vh;
+  background: url("../img/card-deck.jpg");
+  padding: 1rem;
+  border-radius: 1rem;
+  /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem; }
+  .card__deck--card {
     height: 125px;
     width: 125px;
-    background: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Hd-Wallpaper.jpg");
+    background: url("../img/cards.jpg");
     background-position: center;
     background-size: contain;
     background-attachment: fixed;
-    font-size: 0;
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-}
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
 
-.deck .card.open {
-    transform: rotateY(0);
-    background: rgba(3, 169, 244, .5);
-    cursor: default;
-}
-
-.deck .card.show {
-    font-size: 33px;
-}
-
-.deck .card.match {
-    cursor: default;
-    background: #02ccba;
-    font-size: 33px;
-}
-
-.deck .card.unmatched {
-    animation-name: unmatched;
-    -webkit-backface-visibility: visible !important;
-    backface-visibility: visible !important;
-    animation-duration: .56s;
-    background: #e2043b;
-}
-
-@keyframes unmatched {
-    0% {
-        transform: scale3d(1, 1, 1) rotate(0deg);
-    }
-    50% {
-        transform: scale3d(1.2, 1.2, 1.2);
-    }
-    70% {
-        transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg);
-    }
-    80% {
-        transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
-    }
-    100% {
-        transform: scale3d(1, 1, 1) rotate(0deg);
-    }
-}
-
-.disabled {
-    pointer-events: none;
-    border: 2px solid darkred;
-    background-color: rgba(255, 87, 34, 1);
-}
-
-/*
- * Styles for the Score Panel
- */
-
-.score-panel {
-    background: url("http://www.alpacavekofarm.nl/wp-content/uploads/2014/07/hd-houten-achtergrond-voor-windows-houten-planken-wallpaper-foto2.jpg");
-    text-align: center;
-    width: 25vw;
-    height: 25vw;
-    padding: 1rem;
-    border-radius: 1rem;
-    color: white;
-    font-size: 2rem;
-}
-
-.score-panel .stars {
+/* * * * Score panel style * * * */
+.score__panel {
+  background: url("http://www.alpacavekofarm.nl/wp-content/uploads/2014/07/hd-houten-achtergrond-voor-windows-houten-planken-wallpaper-foto2.jpg");
+  text-align: center;
+  width: 25vw;
+  height: 25vw;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white; }
+  .score__panel--stars {
+    display: block; }
+    .score__panel--stars li {
+      list-style: none;
+      display: inline-block; }
+  .score__panel--moves, .score__panel--timer, .score__panel--restart {
     display: block;
-}
+    margin-top: 2rem; }
+  .score__panel--fa:hover {
+    cursor: pointer; }
 
-.score-panel .stars li {
-    list-style: none;
-    display: inline-block;
-}
+/* * * * Utilities are helping classes that are being added only with javascript * * * */
+.u-open {
+  transform: rotateY(0);
+  background: rgba(3, 169, 244, 0.5);
+  cursor: default; }
 
-.score-panel .moves,
-.score-panel .restart,
-.score-panel .timer {
-    display: block;  
-    margin-top: 2rem;  
-}
-.score-panel .fa-repeat:hover {
-    cursor: pointer;
-}
+.u-show {
+  font-size: 33px; }
 
+.u-match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px; }
+
+.u-unmatched {
+  animation-name: unmatched;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .56s;
+  background: #e2043b; }
+
+.u-disabled {
+  pointer-events: none;
+  border: 2px solid darkred;
+  background-color: #ff5722; }
+
+.u-overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #263238;
+  opacity: .5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+/* * * * Modal styling * * * */
 .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  box-shadow: 0.5rem 0.5rem 3rem #e0e0e0;
+  border-radius: 1rem;
+  color: #a5d6a7;
+  visibility: hidden; }
+  .modal__user {
+    width: 40vw;
+    height: 15vw;
+    background: url("https://media.istockphoto.com/photos/futuristic-metal-texture-picture-id154934196?k=6&m=154934196&s=612x612&w=0&h=r9qKQS_V7Stl40vbYHnXFwwXT1h-o7NHoga93Hg6npo="); }
+  .modal__congrats {
     width: 60vw;
     height: 30vw;
-    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/50/64/50577e1f9b187b0.jpg");
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    box-shadow: .5rem .5rem 3rem rgba(224,224,224 ,1);
-    border-radius: 1rem;    
-    opacity: 0;
-    color: rgba(165,214,167 ,1);
-    visibility: hidden;
-}
-
-.modal-show {
-    z-index: 2;
+    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/50/64/50577e1f9b187b0.jpg"); }
+  .modal-show {
+    box-shadow: inset 0rem 0.5rem 3rem #a5d6a7;
+    z-index: 15;
     opacity: 1;
     visibility: visible;
-    animation: moveUp .5s ease-in-out 1;
-}
-
-.modal__header--main {
+    animation: moveUp .5s ease-in-out 1; }
+  .modal__header--main {
     display: block;
     text-transform: uppercase;
     text-align: center;
-    font-size: 2rem;
-    margin-top: 1rem;
-}
-
-.modal__header--sub {
+    margin-top: 1rem; }
+  .modal__header--sub {
     display: block;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1rem;
-    margin-top: 1rem;
-}
-.overlay {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    background-color: rgba(38,50,56 ,1);
-    opacity: .5;
-    position: fixed;
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+    margin-top: 1rem; }
+  .modal__statistics {
+    padding: 1rem; }
+  .modal__restart {
+    text-align: center;
+    margin-top: 3rem;
+    z-index: 1;
+    border: 1px solid red; }
+    .modal__restart--btn {
+      width: 50%;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background-color: transparent;
+      color: #a5d6a7;
+      border: 0.1rem solid #a5d6a7;
+      z-index: 2; }
+      .modal__restart--btn:hover {
+        background-color: #a5d6a7;
+        color: white; }
+
+/* * * * Keyframes * * * */
+@keyframes unmatched {
+  0% {
+    transform: scale3d(1, 1, 1) rotate(0deg); }
+  50% {
+    transform: scale3d(1.2, 1.2, 1.2); }
+  70% {
+    transform: scale3d(1.2, 1.2, 1.2) rotate(-15deg); }
+  80% {
+    transform: scale3d(1.2, 1.2, 1.2) rotate(15deg); }
+  100% {
+    transform: scale3d(1, 1, 1) rotate(0deg); } }
 @keyframes moveUp {
-    0% {
-        transform:  translate(-50%, -50%) scale(0);
-    }
-    50% {
-        transform:  translate(-50%, -50%) scale(1.2)
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
+  0% {
+    transform: translate(-50%, -50%) scale(0); }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    transform: translate(-50%, -50%) scale(1); } }
+
+/*# sourceMappingURL=app.css.map */

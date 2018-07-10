@@ -1,0 +1,24 @@
+/* * * * Universal style * * * */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff url('../img/background.jpg');
+    /* Background pattern from Subtle Patterns */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

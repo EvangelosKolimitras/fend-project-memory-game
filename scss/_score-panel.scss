@@ -1,15 +1,19 @@
 /* * * * Score panel style * * * */
 
 .score__panel {
+    opacity: 0;
+    visibility: hidden;
+
     background: url("http://www.alpacavekofarm.nl/wp-content/uploads/2014/07/hd-houten-achtergrond-voor-windows-houten-planken-wallpaper-foto2.jpg");
     text-align: center;
-    width: 25vw;
-    height: 25vw;
+    width: 95%;
+    margin: .25rem;
+    min-height: 70vh;
     padding: 1rem;
     border-radius: 1rem;
     color: white;
     &--stars {
-        display: block;
+        display: inline-block;
         & li {
             list-style: none;
             display: inline-block;

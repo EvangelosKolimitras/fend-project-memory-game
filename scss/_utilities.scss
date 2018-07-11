@@ -1,4 +1,5 @@
 /* * * * Utilities are helping classes that are being added only with javascript * * * */
+
 .u-open {
     transform: rotateY(0);
     background: rgba(3, 169, 244, .5);
@@ -7,6 +8,11 @@
 
 .u-show {
     font-size: 33px;
+}
+
+.u-hide {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .u-match {
@@ -40,4 +46,5 @@
     left: 0;
     right: 0;
     bottom: 0;
+    transition: 2s ease-in-out;
 }

@@ -1,3 +1,21 @@
 .header img {
     width: 100%;
 }
+
+.card__deck {
+    &--card {
+        height: 125px;
+        width: calc(100% * (1/4) - 10px - 1px);
+        background: url("../img/cards.jpg");
+        background-position: center;
+        background-size: contain;
+        background-attachment: fixed;
+        color: $color-white;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 $color-dark;
+    }
+}

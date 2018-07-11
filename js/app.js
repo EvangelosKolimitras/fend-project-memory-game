@@ -91,6 +91,7 @@ function cardListener() {
 function newGame() {
 
     getUserName();
+
     let shuffledCards = shuffle(cards);
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function (x) {
@@ -150,13 +151,13 @@ function cards_matched() {
 
 function cards_unmatched() {
     console.log('unmatched');
-    flipped_cards[0].classList.add("unmatched");
-    flipped_cards[1].classList.add("unmatched");
+    flipped_cards[0].classList.add("u-unmatched");
+    flipped_cards[1].classList.add("u-unmatched");
 
     disable();
     setTimeout(function () {
-        flipped_cards[0].classList.remove("u-show", "u-open", "unmatched");
-        flipped_cards[1].classList.remove("u-show", "u-open", "unmatched");
+        flipped_cards[0].classList.remove("u-show", "u-open", "u-unmatched");
+        flipped_cards[1].classList.remove("u-show", "u-open", "u-unmatched");
         enable();
         flipped_cards = [];
     }, 500);
@@ -193,6 +194,7 @@ function enable() {
 */
 
 function gameEnd() {
+
     if (matchedCard.length == 16) {
         console.log("Congratulations!!");
         congratsMsg();
@@ -266,43 +268,49 @@ function congratsMsg() {
         overlayModal.classList.add("u-overlay");
         modal_congrats.classList.add("modal-show");
         modalMoves.innerHTML = "Total Moves: " + moves;
-        modalTime.innerHTML  = "Total Time: " + timer.innerHTML;
+        modalTime.innerHTML = "Total Time: " + timer.innerHTML;
     }, 250);
     clearInterval(timeInt);
     console.log("Congratulations");
 }
 
-document.body.onload = newGame();
+
+/*
+    FUNCTION-14:
+    A modal for getting user's name
+*/
 
 function getUserName() {
     setTimeout(() => {
         overlayModal.classList.add("u-overlay");
         modal_user.classList.add("modal-show");
     }, 250);
+
+    btn_user_submit.addEventListener("click", function () {
+        btn_user_submit.preventDefault;
+
+        setTimeout(() => {
+            modal_user.classList.remove("modal-show");
+        }, 500);
+
+        setTimeout(() => {
+            overlayModal.classList.remove("u-overlay");
+
+            board.style.opacity = 1;
+            board.style.visibility = 'visible';
+
+            score_panel.style.opacity = 1;
+            score_panel.style.visibility = 'visible';
+        }, 800);
+
+
+        let username_value = username.value;
+        score_panel_username_label.innerHTML = username_value;
+        modal_congrats_name_output.innerHTML += username_value;
+        console.log("Your username is: " + username_value);
+
+        return username_value;
+    });
 }
 
-btn_user_submit.addEventListener("click", function() {
-    btn_user_submit.preventDefault;
-    
-    setTimeout(() => {
-        modal_user.classList.remove("modal-show");
-    }, 500);
-    
-    setTimeout(() => {
-        overlayModal.classList.remove("u-overlay");
-
-        board.style.opacity = 1;
-        board.style.visibility = 'visible';
-
-        score_panel.style.opacity = 1;
-        score_panel.style.visibility = 'visible';
-    }, 800);
-
-    
-    let username_value = username.value;
-    score_panel_username_label.innerHTML = username_value;
-    modal_congrats_name_output.innerHTML += username_value;
-    console.log("Your username is: " + username_value);
-    
-    return username_value;
-});
+document.body.onload = newGame();

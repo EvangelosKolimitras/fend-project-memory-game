@@ -6,9 +6,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
-    box-shadow: .5rem .5rem 3rem rgba(224, 224, 224, 1);
+    box-shadow: .5rem .5rem 3rem $color-white;
     border-radius: 1rem;
-    color: rgba(165, 214, 167, 1);
+    color: $color-primary;
     visibility: hidden;
 
     &__user {
@@ -24,7 +24,7 @@
     }
 
     &-show {
-        box-shadow: inset 0rem .5rem 3rem rgba(165, 214, 167, 1);
+        box-shadow: inset 0rem .5rem 3rem $color-primary;
         z-index: 15;
         opacity: 1;
         visibility: visible;
@@ -59,12 +59,12 @@
             height: 3.5rem;
             border-radius: 1rem;
             background-color: transparent;
-            color: rgba(165, 214, 167, 1);
-            border: .1rem solid rgba(165, 214, 167, 1);
+            color: $color-primary;
+            border: .1rem solid $color-primary;
             z-index: 2;
             &:hover {
-                background-color: rgba(165, 214, 167, 1);
-                color: rgba(255, 255, 255, 1);
+                background-color: $color-primary;
+                color: $color-white;
             }
         }
     }

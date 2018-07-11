@@ -11,13 +11,10 @@
     min-height: 70vh;
     padding: 1rem;
     border-radius: 1rem;
-    color: white;
+    color: $color-white;
     &--stars {
-        display: inline-block;
-        & li {
-            list-style: none;
-            display: inline-block;
-        }
+        // display: block;
+        width: 100%;
     }
     &--moves,
     &--timer,
@@ -26,8 +23,15 @@
         margin-top: 2rem;
     }
     &--fa {
-        &:hover {
-            cursor: pointer;
+        &-star {
+            margin-left: 0;
+            padding: .5rem;
+            display: inline-block;
+            list-style: none;
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

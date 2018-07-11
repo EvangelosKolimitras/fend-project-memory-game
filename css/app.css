@@ -14,7 +14,6 @@ body {
   margin: 0;
   padding: 0;
   background: #ffffff url("../img/background.jpg");
-  /* Background pattern from Subtle Patterns */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
@@ -51,6 +50,21 @@ body {
 .header img {
   width: 100%; }
 
+.card__deck--card {
+  height: 125px;
+  width: calc(100% * (1/4) - 10px - 1px);
+  background: url("../img/cards.jpg");
+  background-position: center;
+  background-size: contain;
+  background-attachment: fixed;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
+
 /* * * * Deck style * * * */
 .card__deck {
   opacity: 0;
@@ -60,26 +74,11 @@ body {
   background: url("../img/card-deck.jpg");
   padding: 1rem;
   border-radius: 1rem;
-  /* box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5); */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-left: 5rem; }
-  .card__deck--card {
-    height: 125px;
-    width: calc(100% * (1/4) - 10px - 1px);
-    background: url("../img/cards.jpg");
-    background-position: center;
-    background-size: contain;
-    background-attachment: fixed;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
 
 /* * * * Score panel style * * * */
 .score__panel {
@@ -94,20 +93,22 @@ body {
   border-radius: 1rem;
   color: white; }
   .score__panel--stars {
-    display: inline-block; }
-    .score__panel--stars li {
-      list-style: none;
-      display: inline-block; }
+    width: 100%; }
   .score__panel--moves, .score__panel--timer, .score__panel--restart {
     display: block;
     margin-top: 2rem; }
-  .score__panel--fa:hover {
-    cursor: pointer; }
+  .score__panel--fa-star {
+    margin-left: 0;
+    padding: .5rem;
+    display: inline-block;
+    list-style: none; }
+    .score__panel--fa-star:hover {
+      cursor: pointer; }
 
 /* * * * Utilities are helping classes that are being added only with javascript * * * */
 .u-open {
   transform: rotateY(0);
-  background: rgba(3, 169, 244, 0.5);
+  background: rgba(3, 169, 244, 0.3);
   cursor: default; }
 
 .u-show {
@@ -119,7 +120,7 @@ body {
 
 .u-match {
   cursor: default;
-  background: #02ccba;
+  background: rgba(2, 204, 186, 0.3);
   font-size: 33px; }
 
 .u-unmatched {
@@ -127,18 +128,17 @@ body {
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-duration: .56s;
-  background: #e2043b; }
+  background: rgba(244, 67, 54, 0.3); }
 
 .u-disabled {
   pointer-events: none;
-  border: 2px solid darkred;
-  background-color: #ff5722; }
+  border: 1px solid darkred; }
 
 .u-overlay {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: #263238;
+  background-color: rgba(46, 61, 73, 0.5);
   opacity: .5;
   position: fixed;
   top: 0;
@@ -154,9 +154,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
-  box-shadow: 0.5rem 0.5rem 3rem #e0e0e0;
+  box-shadow: 0.5rem 0.5rem 3rem white;
   border-radius: 1rem;
-  color: #a5d6a7;
+  color: rgba(165, 214, 167, 0.3);
   visibility: hidden; }
   .modal__user {
     width: 40vw;
@@ -167,7 +167,7 @@ body {
     height: 30vw;
     background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/50/64/50577e1f9b187b0.jpg"); }
   .modal-show {
-    box-shadow: inset 0rem 0.5rem 3rem #a5d6a7;
+    box-shadow: inset 0rem 0.5rem 3rem rgba(165, 214, 167, 0.3);
     z-index: 15;
     opacity: 1;
     visibility: visible;
@@ -194,11 +194,11 @@ body {
       height: 3.5rem;
       border-radius: 1rem;
       background-color: transparent;
-      color: #a5d6a7;
-      border: 0.1rem solid #a5d6a7;
+      color: rgba(165, 214, 167, 0.3);
+      border: 0.1rem solid rgba(165, 214, 167, 0.3);
       z-index: 2; }
       .modal__restart--btn:hover {
-        background-color: #a5d6a7;
+        background-color: rgba(165, 214, 167, 0.3);
         color: white; }
 
 /* * * * Keyframes * * * */

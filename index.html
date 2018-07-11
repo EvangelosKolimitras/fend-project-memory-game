@@ -14,7 +14,7 @@
 
     <div id="modal__user"    class="modal modal__user">
         <form class="modal__user--form" action="#">
-            <input id="modal__user--form-input" type="text" class="modal__user--form-input">
+            <input id="modal__user--form-input" type="text" class="modal__user--form-input" autofocus required>
             <button class="modal__user--form-btn">Start</button>
         </form>
     </div>
@@ -40,15 +40,9 @@
             <section class="score__panel">
                 <span class="score__panel--username-label"></span>
                 <ul id="level" class="score__panel--stars">
-                    <li>
-                        <i class="score__panel--fa fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i class="score__panel--fa fa fa-star"></i>
-                    </li>
-                    <li>
-                        <i class="score__panel--fa fa fa-star"></i>
-                    </li>
+                    <li class="score__panel--fa-star"> <i class="fa fa-star"></i> </li>
+                    <li class="score__panel--fa-star"> <i class="fa fa-star"></i> </li>
+                    <li class="score__panel--fa-star"> <i class="fa fa-star"></i> </li>
                 </ul>
 
                 <span class="score__panel--moves"></span>

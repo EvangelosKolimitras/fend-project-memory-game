@@ -27,7 +27,7 @@ body {
   flex-direction: column; }
 
 .header {
-  width: 25vw;
+  width: 15%;
   position: absolute;
   top: 0;
   left: 1rem; }
@@ -53,7 +53,9 @@ body {
 
 /* * * * Deck style * * * */
 .card__deck {
-  width: 40vw;
+  opacity: 0;
+  visibility: hidden;
+  width: 70%;
   min-height: 90vh;
   background: url("../img/card-deck.jpg");
   padding: 1rem;
@@ -63,10 +65,10 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem; }
+  margin-left: 5rem; }
   .card__deck--card {
     height: 125px;
-    width: 125px;
+    width: calc(100% * (1/4) - 10px - 1px);
     background: url("../img/cards.jpg");
     background-position: center;
     background-size: contain;
@@ -81,15 +83,18 @@ body {
 
 /* * * * Score panel style * * * */
 .score__panel {
+  opacity: 0;
+  visibility: hidden;
   background: url("http://www.alpacavekofarm.nl/wp-content/uploads/2014/07/hd-houten-achtergrond-voor-windows-houten-planken-wallpaper-foto2.jpg");
   text-align: center;
-  width: 25vw;
-  height: 25vw;
+  width: 95%;
+  margin: .25rem;
+  min-height: 70vh;
   padding: 1rem;
   border-radius: 1rem;
   color: white; }
   .score__panel--stars {
-    display: block; }
+    display: inline-block; }
     .score__panel--stars li {
       list-style: none;
       display: inline-block; }
@@ -107,6 +112,10 @@ body {
 
 .u-show {
   font-size: 33px; }
+
+.u-hide {
+  opacity: 0;
+  visibility: hidden; }
 
 .u-match {
   cursor: default;
@@ -135,7 +144,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+  transition: 2s ease-in-out; }
 
 /* * * * Modal styling * * * */
 .modal {

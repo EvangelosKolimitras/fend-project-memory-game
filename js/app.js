@@ -7,11 +7,18 @@
 const board = document.querySelector("#card__deck");
 const move = document.querySelector(".score__panel--moves");
 
-const modal_congrats = document.getElementById("modal_congrats");
-const modal_user = document.getElementById("modal__user");
+const score_panel = document.querySelector(".score__panel");
+const score_panel_username_label = document.querySelector(".score__panel--username-label");
 
-const username = document.getElementById("modal__user--input");
-const overlayModal = document.getElementById("overlay");
+const modal_user = document.querySelector("#modal__user");
+
+const username = document.querySelector("#modal__user--form-input");
+const btn_user_submit = document.querySelector(".modal__user--form-btn");
+
+const overlayModal = document.querySelector("#overlay");
+const modal_congrats = document.querySelector("#modal_congrats");
+
+const modal_congrats_name_output = document.querySelector(".modal__header--name");
 const modalMoves = document.querySelector(".modal__statistics--moves");
 const modalTime = document.querySelector(".modal__statistics--time");
 const modalRestartBtn = document.querySelector("#modal__restart--btn");
@@ -23,10 +30,10 @@ let card = document.querySelectorAll(".card__deck--card");
 
 let matchedCard = document.getElementsByClassName("u-match");
 
-let restart_btn = document.getElementById("restart");
+let restart_btn = document.querySelector("#restart");
 restart_btn.addEventListener("click", restart);
 
-let timer = document.getElementById("timer");
+let timer = document.querySelector("#timer");
 
 /*
     Manipulation of retrieved elements 
@@ -83,6 +90,7 @@ function cardListener() {
 
 function newGame() {
 
+    getUserName();
     let shuffledCards = shuffle(cards);
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function (x) {
@@ -99,7 +107,7 @@ function newGame() {
     m = 0;
     h = 0;
 
-    let timer = document.getElementById("timer");
+    let timer = document.querySelector("#timer");
     timer.innerHTML = "0 : 0";
     clearInterval(timeInt);
 }
@@ -273,4 +281,28 @@ function getUserName() {
     }, 250);
 }
 
-getUserName();
+btn_user_submit.addEventListener("click", function() {
+    btn_user_submit.preventDefault;
+    
+    setTimeout(() => {
+        modal_user.classList.remove("modal-show");
+    }, 500);
+    
+    setTimeout(() => {
+        overlayModal.classList.remove("u-overlay");
+
+        board.style.opacity = 1;
+        board.style.visibility = 'visible';
+
+        score_panel.style.opacity = 1;
+        score_panel.style.visibility = 'visible';
+    }, 800);
+
+    
+    let username_value = username.value;
+    score_panel_username_label.innerHTML = username_value;
+    modal_congrats_name_output.innerHTML += username_value;
+    console.log("Your username is: " + username_value);
+    
+    return username_value;
+});

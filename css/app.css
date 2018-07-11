@@ -201,6 +201,32 @@ body {
         background-color: rgba(165, 214, 167, 0.3);
         color: white; }
 
+.modal__user--form {
+  position: relative;
+  min-height: 100%;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .modal__user--form-input {
+    background: rgba(2, 204, 186, 0.3);
+    box-shadow: 1rem 1rem 1rem rgba(46, 61, 73, 0.5);
+    position: absolute;
+    font-size: 2rem;
+    color: white;
+    min-height: 5rem;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.2rem; }
+    .modal__user--form-input::-webkit-input-placeholder {
+      font-size: 2rem;
+      text-align: center;
+      color: white; }
+  .modal__user--form-btn {
+    display: none; }
+
 /* * * * Keyframes * * * */
 @keyframes unmatched {
   0% {

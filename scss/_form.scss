@@ -1,0 +1,31 @@
+.modal__user--form {
+    position: relative;
+    min-height: 100%;
+    width: 90%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &-input {
+        background: $color-tertiary;
+        box-shadow: 1rem 1rem 1rem $color-dark;
+        position: absolute;
+        font-size: 2rem;
+        color: $color-white;
+        min-height: 5rem;
+        width: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.2rem;
+        &::-webkit-input-placeholder {
+            font-size: 2rem;
+            text-align: center;
+            color: $color-white;
+        }
+    }
+
+    &-btn {
+        display: none;
+    }
+}

@@ -200,7 +200,7 @@ body {
     text-align: center;
     margin-top: 3rem;
     z-index: 1;
-    border: 1px solid red; }
+    outline: none; }
 
 .modal__user--form {
   position: relative;
@@ -227,6 +227,18 @@ body {
       color: white; }
   .modal__user--form-btn {
     display: none; }
+.modal__user--logo {
+  position: absolute;
+  width: 50%;
+  min-height: 3rem;
+  max-height: 3.5rem;
+  top: 1rem;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 2rem; }
+  .modal__user--logo > img {
+    width: 100%; }
 
 /* * * * Keyframes * * * */
 @keyframes unmatched {

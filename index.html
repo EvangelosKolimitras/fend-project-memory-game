@@ -13,15 +13,16 @@
 <body>
 
     <div id="modal__user" class="modal modal__user">
+        <span class="modal__user--logo"></span>
         <form class="modal__user--form" action="#">
-            <input id="modal__user--form-input" type="text" class="modal__user--form-input" autofocus required autocomplete="off" placeholder="Username">
+            <input id="modal__user--form-input" type="text" class="modal__user--form-input" autofocus="on" required autocomplete="off" placeholder="Username">
             <button class="modal__user--form-btn">Start</button>
         </form>
     </div>
 
     <div id="overlay"></div>
     <div class="container">
-        <div id="modal_congrats" class="modal modal__congrats">
+        <div id="modal__congrats" class="modal modal__congrats">
             <div class="modal__header--main">Congratulations
                 <span class="modal__header--name"></span>!</div>
             <div class="modal__header--sub">You won!</div>
@@ -34,8 +35,8 @@
             </div>
         </div>
         <header class="header">
-            <h1>
-                <img class="" src="img/logo.png" alt="Memory game logo">
+            <h1 class="header__logo">
+                <img class="header__logo--img" src="img/logo.png" alt="Memory game logo">
             </h1>
             <section class="score__panel">
                 <span class="score__panel--username-label"></span>

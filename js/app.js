@@ -12,13 +12,17 @@ const score_panel_username_label = document.querySelector(".score__panel--userna
 
 const modal_user = document.querySelector("#modal__user");
 
+const modal_user_logo = document.querySelector(".modal__user--logo");
+modal_user_logo.innerHTML = document.querySelector(".header__logo").innerHTML;
+
+
 const username = document.querySelector("#modal__user--form-input");
 const btn_user_submit = document.querySelector(".modal__user--form-btn");
 
 const overlayModal = document.querySelector("#overlay");
-const modal_congrats = document.querySelector("#modal_congrats");
+const modal__congrats = document.querySelector("#modal__congrats");
 
-const modal_congrats_name_output = document.querySelector(".modal__header--name");
+const modal__congrats_name_output = document.querySelector(".modal__header--name");
 const modalMoves = document.querySelector(".modal__statistics--moves");
 const modalTime = document.querySelector(".modal__statistics--time");
 const modalRestartBtn = document.querySelector("#modal__restart--btn");
@@ -99,6 +103,8 @@ function newGame() {
         cards[i].classList.remove("u-show", "u-open", "u-match", "u-disabled");
     }
 
+    //  RESETS
+    username.value = "";
     moves = 0;
     move.innerHTML = moves;
 
@@ -259,7 +265,7 @@ function restart() {
 
 modalRestartBtn.addEventListener("click", function () {
     overlayModal.classList.remove("u-overlay");
-    modal_congrats.classList.remove("modal-show");
+    modal__congrats.classList.remove("modal-show");
     newGame();
 });
 /*
@@ -270,7 +276,7 @@ modalRestartBtn.addEventListener("click", function () {
 function congratsMsg() {
     setTimeout(() => {
         overlayModal.classList.add("u-overlay");
-        modal_congrats.classList.add("modal-show");
+        modal__congrats.classList.add("modal-show");
         modalMoves.innerHTML = "Total Moves: " + moves;
         modalTime.innerHTML = "Total Time: " + timer.innerHTML;
     }, 250);
@@ -285,7 +291,7 @@ function congratsMsg() {
 */
 
 function getUserName() {
-    let username_value = username.value;
+    
 
     setTimeout(() => {
         overlayModal.classList.add("u-overlay");
@@ -293,6 +299,7 @@ function getUserName() {
     }, 250);
 
     btn_user_submit.addEventListener("click", function () {
+        
 
         btn_user_submit.preventDefault;
         setTimeout(() => {
@@ -306,12 +313,13 @@ function getUserName() {
             score_panel.style.opacity = 1;
             score_panel.style.visibility = 'visible';
         }, 800);
-
+        let username_value = username.value;
         score_panel_username_label.innerHTML = username_value;
-        modal_congrats_name_output.innerHTML += username_value;
+        modal__congrats_name_output.innerHTML += username_value;
         console.log("Your username is: " + username_value);
+        return username_value;
     });
-    return username_value;
+
 }
 
 document.body.onload = newGame();

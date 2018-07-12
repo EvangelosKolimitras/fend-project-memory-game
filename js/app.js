@@ -89,7 +89,6 @@ function cardListener() {
 */
 
 function newGame() {
-
     getUserName();
 
     let shuffledCards = shuffle(cards);
@@ -258,6 +257,11 @@ function restart() {
     newGame();
 }
 
+modalRestartBtn.addEventListener("click", function () {
+    overlayModal.classList.remove("u-overlay");
+    modal_congrats.classList.remove("modal-show");
+    newGame();
+});
 /*
     FUNCTION-13:
     A congratulations message along with the resulting score appears to the user.
@@ -281,36 +285,33 @@ function congratsMsg() {
 */
 
 function getUserName() {
+    let username_value = username.value;
+
     setTimeout(() => {
         overlayModal.classList.add("u-overlay");
         modal_user.classList.add("modal-show");
     }, 250);
 
     btn_user_submit.addEventListener("click", function () {
-        btn_user_submit.preventDefault;
 
+        btn_user_submit.preventDefault;
         setTimeout(() => {
             modal_user.classList.remove("modal-show");
         }, 500);
 
         setTimeout(() => {
             overlayModal.classList.remove("u-overlay");
-
             board.style.opacity = 1;
             board.style.visibility = 'visible';
-
             score_panel.style.opacity = 1;
             score_panel.style.visibility = 'visible';
         }, 800);
 
-
-        let username_value = username.value;
         score_panel_username_label.innerHTML = username_value;
         modal_congrats_name_output.innerHTML += username_value;
         console.log("Your username is: " + username_value);
-
-        return username_value;
     });
+    return username_value;
 }
 
 document.body.onload = newGame();

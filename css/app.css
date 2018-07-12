@@ -65,6 +65,18 @@ body {
   align-items: center;
   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
 
+.modal__restart--btn {
+  width: 50%;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: rgba(165, 214, 167, 0.3);
+  border: 0.1rem solid rgba(165, 214, 167, 0.3);
+  z-index: 2; }
+  .modal__restart--btn:hover {
+    background-color: rgba(165, 214, 167, 0.3);
+    color: white; }
+
 /* * * * Deck style * * * */
 .card__deck {
   opacity: 0;
@@ -158,6 +170,16 @@ body {
   border-radius: 1rem;
   color: rgba(165, 214, 167, 0.3);
   visibility: hidden; }
+  .modal__header--main {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1rem; }
+  .modal__header--sub {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1rem; }
   .modal__user {
     width: 40vw;
     height: 15vw;
@@ -172,16 +194,6 @@ body {
     opacity: 1;
     visibility: visible;
     animation: moveUp .5s ease-in-out 1; }
-  .modal__header--main {
-    display: block;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 1rem; }
-  .modal__header--sub {
-    display: block;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 1rem; }
   .modal__statistics {
     padding: 1rem; }
   .modal__restart {
@@ -189,17 +201,6 @@ body {
     margin-top: 3rem;
     z-index: 1;
     border: 1px solid red; }
-    .modal__restart--btn {
-      width: 50%;
-      height: 3.5rem;
-      border-radius: 1rem;
-      background-color: transparent;
-      color: rgba(165, 214, 167, 0.3);
-      border: 0.1rem solid rgba(165, 214, 167, 0.3);
-      z-index: 2; }
-      .modal__restart--btn:hover {
-        background-color: rgba(165, 214, 167, 0.3);
-        color: white; }
 
 .modal__user--form {
   position: relative;

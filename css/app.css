@@ -51,19 +51,19 @@ body {
   width: 100%; }
 
 .card__deck--card {
-  height: 125px;
-  width: calc(100% * (1/4) - 10px - 1px);
+  height: 8rem;
+  width: calc(100% * (1/4) - 1rem - 1rem);
   background: url("../img/cards.jpg");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   color: white;
-  border-radius: 8px;
+  border-radius: .8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
+  box-shadow: 0.5rem 0.2rem 2rem 0 rgba(46, 61, 73, 0.5); }
 
 .modal__restart--btn {
   width: 50%;
@@ -124,7 +124,7 @@ body {
   cursor: default; }
 
 .u-show {
-  font-size: 33px; }
+  font-size: 2.8rem; }
 
 .u-hide {
   opacity: 0;
@@ -133,7 +133,7 @@ body {
 .u-match {
   cursor: default;
   background: rgba(2, 204, 186, 0.3);
-  font-size: 33px; }
+  font-size: 2.8rem; }
 
 .u-unmatched {
   animation-name: unmatched;
@@ -144,7 +144,7 @@ body {
 
 .u-disabled {
   pointer-events: none;
-  border: 1px solid darkred; }
+  border: .1rem solid darkred; }
 
 .u-overlay {
   width: 100%;

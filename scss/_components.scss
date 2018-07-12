@@ -4,19 +4,19 @@
 
 .card__deck {
     &--card {
-        height: 125px;
-        width: calc(100% * (1/4) - 10px - 1px);
+        height: 8rem;
+        width: calc(100% * (1/4) - 1rem - 1rem);
         background: url("../img/cards.jpg");
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
         color: $color-white;
-        border-radius: 8px;
+        border-radius: .8rem;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 5px 2px 20px 0 $color-dark;
+        box-shadow: .5rem .2rem 2rem 0 $color-dark;
     }
 }
 

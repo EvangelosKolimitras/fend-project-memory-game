@@ -8,18 +8,19 @@
 
 // This u-show class is used to show the cards
 .u-show {
-    font-size: 33px;
+    font-size: 2.8rem;
 }
 
 .u-hide {
     opacity: 0;
     visibility: hidden;
+
 }
 
 .u-match {
     cursor: default;
     background: $color-tertiary;
-    font-size: 33px;
+    font-size: 2.8rem;
 }
 
 .u-unmatched {
@@ -32,7 +33,7 @@
 
 .u-disabled {
     pointer-events: none;
-    border: 1px solid darkred;
+    border: .1rem solid darkred;
 }
 
 .u-overlay {

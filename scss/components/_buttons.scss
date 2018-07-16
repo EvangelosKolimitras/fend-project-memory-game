@@ -1,0 +1,15 @@
+.modal__restart {
+    &--btn {
+        width: 50%;
+        height: 3.5rem;
+        border-radius: 1rem;
+        background-color: transparent;
+        color: $color-primary;
+        border: .1rem solid $color-primary;
+        z-index: 2;
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+}

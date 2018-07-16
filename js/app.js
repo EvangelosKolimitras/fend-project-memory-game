@@ -104,6 +104,7 @@ function newGame() {
     }
 
     //  RESETS
+
     username.value = "";
     moves = 0;
     move.innerHTML = moves;

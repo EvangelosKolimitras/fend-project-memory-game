@@ -12,36 +12,33 @@
             position: absolute;
             font-size: 2rem;
             color: $color-white;
-            min-height: 5rem;
+            min-height: 50%;
             width: 70%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 1.2rem;
             &::-webkit-input-placeholder {
-                font-size: 2rem;
+                font-size: 1.5rem;
                 text-align: center;
                 color: $color-white;
             }
         }
-
         &-btn {
             display: none;
         }
     }
-
     &--logo {
         position: absolute;
         width: 50%;
         min-height: 3rem;
         max-height: 3.5rem;
-        top: 1rem;
+        top: -100%;
         z-index: 2;
         left: 50%;
         transform: translate(-50%, 0);
         bottom: 2rem;
-
-        &> img {
+        &>img {
             width: 100%;
         }
     }

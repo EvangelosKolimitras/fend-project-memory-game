@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matching Game</title>
-    <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
@@ -19,10 +20,8 @@
             <button class="modal__user--form-btn">Start</button>
         </form>
     </div>
-
-    <div id="overlay"></div>
-    <div class="container">
-        <div id="modal__congrats" class="modal modal__congrats">
+    
+    <div id="modal__congrats" class="modal modal__congrats">
             <div class="modal__header--main">Congratulations
                 <span class="modal__header--name"></span>!</div>
             <div class="modal__header--sub">You won!</div>
@@ -34,11 +33,15 @@
                 <button id="modal__restart--btn" class="modal__restart--btn">Restart</button>
             </div>
         </div>
+
+    <div id="overlay"></div>
+    <div class="container">
         <header class="header">
             <h1 class="header__logo">
                 <img class="header__logo--img" src="img/logo.png" alt="Memory game logo">
             </h1>
-            <section class="score__panel">
+        </header>
+        <section class="score__panel">
                 <span class="score__panel--username-label"></span>
                 <ul id="level" class="score__panel--stars">
                     <li class="score__panel--fa-star"> <i class="fa fa-star"></i> </li>
@@ -54,56 +57,55 @@
                 </div>
 
             </section>
-        </header>
 
         <ul id="card__deck" class="card__deck">
             <li class="card__deck--card" type="diamond">
-                <i class="card__deck--fa fa fa-diamond"></i>
+                <i class="card__deck--card-fa fa fa-diamond"></i>
             </li>
             <li class="card__deck--card" type="paper">
-                <i class="card__deck--fa fa fa-paper-plane-o"></i>
+                <i class="card__deck--card-fa fa fa-paper-plane-o"></i>
             </li>
             <li class="card__deck--card" type="anchor">
-                <i class="card__deck--fa fa fa-anchor"></i>
+                <i class="card__deck--card-fa fa fa-anchor"></i>
             </li>
             <li class="card__deck--card" type="bolt">
-                <i class="card__deck--fa fa fa-bolt"></i>
+                <i class="card__deck--card-fa fa fa-bolt"></i>
             </li>
             <li class="card__deck--card" type="cube">
-                <i class="card__deck--fa fa fa-cube"></i>
+                <i class="card__deck--card-fa fa fa-cube"></i>
             </li>
             <li class="card__deck--card" type="anchor">
-                <i class="card__deck--fa fa fa-anchor"></i>
+                <i class="card__deck--card-fa fa fa-anchor"></i>
             </li>
             <li class="card__deck--card" type="leaf">
-                <i class="card__deck--fa fa fa-leaf"></i>
+                <i class="card__deck--card-fa fa fa-leaf"></i>
             </li>
             <li class="card__deck--card" type="bicycle">
-                <i class="card__deck--fa fa fa-bicycle"></i>
+                <i class="card__deck--card-fa fa fa-bicycle"></i>
             </li>
             <li class="card__deck--card" type="diamond">
-                <i class="card__deck--fa fa fa-diamond"></i>
+                <i class="card__deck--card-fa fa fa-diamond"></i>
             </li>
             <li class="card__deck--card" type="bomb">
-                <i class="card__deck--fa fa fa-bomb"></i>
+                <i class="card__deck--card-fa fa fa-bomb"></i>
             </li>
             <li class="card__deck--card" type="leaf">
-                <i class="card__deck--fa fa fa-leaf"></i>
+                <i class="card__deck--card-fa fa fa-leaf"></i>
             </li>
             <li class="card__deck--card" type="bomb">
-                <i class="card__deck--fa fa fa-bomb"></i>
+                <i class="card__deck--card-fa fa fa-bomb"></i>
             </li>
             <li class="card__deck--card" type="bolt">
-                <i class="card__deck--fa fa fa-bolt"></i>
+                <i class="card__deck--card-fa fa fa-bolt"></i>
             </li>
             <li class="card__deck--card" type="bicycle">
-                <i class="card__deck--fa fa fa-bicycle"></i>
+                <i class="card__deck--card-fa fa fa-bicycle"></i>
             </li>
             <li class="card__deck--card" type="paper">
-                <i class="card__deck--fa fa fa-paper-plane-o"></i>
+                <i class="card__deck--card-fa fa fa-paper-plane-o"></i>
             </li>
             <li class="card__deck--card" type="cube">
-                <i class="card__deck--fa fa fa-cube"></i>
+                <i class="card__deck--card-fa fa fa-cube"></i>
             </li>
         </ul>
     </div>

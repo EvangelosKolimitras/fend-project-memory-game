@@ -13,23 +13,21 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #ffffff url("../img/background.jpg");
+  background: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
 
 /* * * Layout styles * * * * */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
+  position: relative;
+  height: 100vh; }
 
 .header {
   width: 15%;
-  position: absolute;
+  position: relative;
   top: 0;
-  left: 1rem; }
+  left: 0; }
 
 body {
   font-family: 'Coda', cursive; }
@@ -47,24 +45,6 @@ body {
 .score__panel {
   font-size: 2rem; }
 
-.header img {
-  width: 100%; }
-
-.card__deck--card {
-  height: 8rem;
-  width: calc(100% * (1/4) - 1rem - 1rem);
-  background: url("../img/cards.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  color: white;
-  border-radius: .8rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0.5rem 0.2rem 2rem 0 rgba(46, 61, 73, 0.5); }
-
 .modal__restart--btn {
   width: 50%;
   height: 3.5rem;
@@ -77,33 +57,250 @@ body {
     background-color: rgba(165, 214, 167, 0.3);
     color: white; }
 
+.card__deck--card {
+  position: relative;
+  height: 8rem;
+  width: calc(100% * (1/4) - 1rem - .1rem);
+  margin: .3%;
+  background: url("../img/cards.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  border-radius: .8rem;
+  box-shadow: 0.5rem 0.2rem 2rem 0 rgba(46, 61, 73, 0.5);
+  cursor: pointer; }
+  .card__deck--card-fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .card__deck--card:nth-child(1) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(2) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(3) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(4) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(5) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(6) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(7) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(8) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(9) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(10) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(11) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(12) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(13) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(14) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(15) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .card__deck--card:nth-child(16) {
+    flex-grow: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+
+.header img {
+  width: 100%; }
+
 /* * * * Deck style * * * */
 .card__deck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   visibility: hidden;
-  width: 70%;
-  min-height: 90vh;
+  width: 50%;
+  height: 70vh;
+  padding: .5rem;
   background: url("../img/card-deck.jpg");
-  padding: 1rem;
   border-radius: 1rem;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
-  align-items: center;
-  margin-left: 5rem; }
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 /* * * * Score panel style * * * */
 .score__panel {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translate(0, -50%);
+  height: 70vh;
+  width: 20%;
   opacity: 0;
   visibility: hidden;
   background: url("http://www.alpacavekofarm.nl/wp-content/uploads/2014/07/hd-houten-achtergrond-voor-windows-houten-planken-wallpaper-foto2.jpg");
-  text-align: center;
-  width: 95%;
-  margin: .25rem;
-  min-height: 70vh;
-  padding: 1rem;
   border-radius: 1rem;
-  color: white; }
+  color: white;
+  text-align: center;
+  padding: 1rem; }
   .score__panel--stars {
     width: 100%; }
   .score__panel--moves, .score__panel--timer, .score__panel--restart {
@@ -183,11 +380,11 @@ body {
   .modal__user {
     width: 40vw;
     height: 15vw;
-    background: url("https://media.istockphoto.com/photos/futuristic-metal-texture-picture-id154934196?k=6&m=154934196&s=612x612&w=0&h=r9qKQS_V7Stl40vbYHnXFwwXT1h-o7NHoga93Hg6npo="); }
+    background: url("../img/user_input_bg.jpg"); }
   .modal__congrats {
     width: 60vw;
     height: 30vw;
-    background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/50/64/50577e1f9b187b0.jpg"); }
+    background: url("../img/congrats_bg.jpg"); }
   .modal-show {
     box-shadow: inset 0rem 0.5rem 3rem rgba(165, 214, 167, 0.3);
     z-index: 15;
@@ -202,6 +399,14 @@ body {
     z-index: 1;
     outline: none; }
 
+@media only screen and (max-width: 500px) {
+  .modal__user {
+    width: 90%;
+    height: 5rem; } }
+@media only screen and (max-width: 700px) {
+  .modal__user {
+    width: 90%;
+    height: 5rem; } }
 .modal__user--form {
   position: relative;
   min-height: 100%;
@@ -215,14 +420,14 @@ body {
     position: absolute;
     font-size: 2rem;
     color: white;
-    min-height: 5rem;
+    min-height: 50%;
     width: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1.2rem; }
     .modal__user--form-input::-webkit-input-placeholder {
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
       color: white; }
   .modal__user--form-btn {
@@ -232,7 +437,7 @@ body {
   width: 50%;
   min-height: 3rem;
   max-height: 3.5rem;
-  top: 1rem;
+  top: -100%;
   z-index: 2;
   left: 50%;
   transform: translate(-50%, 0);
